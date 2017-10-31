@@ -25,8 +25,8 @@ module.exports.insertOne = function(burgerName){
   }
 }
 
-module.exports.updateOne = function(burgerName, devourNum){
-  userConnection.query(`UPDATE burgers_db.burgers SET devoured = ${devourNum} WHERE burger_name = '${burgerName}'`, function(err, res){
-    console.log(`${burgerName} was devoured!`);
+module.exports.updateOne = function(burgerID, devourNum){
+  userConnection.query(`UPDATE burgers_db.burgers SET devoured = ${devourNum} WHERE id = '${burgerID}'`, function(err, res){
+    console.log(`${burgerID} was devoured!`);
   });
 }

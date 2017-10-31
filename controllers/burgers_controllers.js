@@ -18,4 +18,10 @@ router.post('/add', function(req, res){
   res.redirect('/burgers');
 })
 
+router.post('/update', function(req, res){
+  console.log(req.body);
+  burger.devourBurger(req.body.burger, 1);
+  res.redirect('/burgers');
+})
+
 module.exports = router;

@@ -5,12 +5,9 @@ exports.addBurger = function(burgerName) {
   orm.insertOne(burgerName);
 };
 
-exports.devourBurger = function() {
-  // body...
+exports.devourBurger = function(burgerID, devouredStatus) {
+  orm.updateOne(burgerID, devouredStatus)
 }
-//when user clicks devour
-//run orm.updateOne(burgerClicked, 1);
-//update page
 
 exports.getBurgers = function(cb) {
   // body...
