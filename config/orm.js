@@ -12,11 +12,11 @@ function connectUser(){
 connectUser();
 
 
-//exports
-module.exports.selectAll = function(){
+//exports   --these are speaking with the backend
+module.exports.selectAll = function(cb){
   userConnection.query('SELECT * FROM burgers_db.burgers', function(err, res){
-    console.log(res);
-  })
+    cb(res);
+  });
 }
 
 module.exports.insertOne = function(burgerName){

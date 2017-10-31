@@ -1,12 +1,9 @@
 const orm = require('./../config/orm.js');
 
 
-exports.addBurger = function() {
-  // body...
+exports.addBurger = function(burgerName) {
+  orm.insertOne(burgerName);
 };
-//when user presses enter and burgername !== ''
-//get burgername and run orm.addOne(burgername);
-//update page
 
 exports.devourBurger = function() {
   // body...
@@ -14,3 +11,10 @@ exports.devourBurger = function() {
 //when user clicks devour
 //run orm.updateOne(burgerClicked, 1);
 //update page
+
+exports.getBurgers = function(cb) {
+  // body...
+  orm.selectAll(function(res){
+    cb(res);
+  });
+};
